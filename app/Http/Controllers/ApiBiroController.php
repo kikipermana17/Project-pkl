@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Biro;
 use Illuminate\Http\Request;
 
-class BiroController extends Controller
+class ApiBiroController extends Controller
 {
     /**
      * Display a listing of the resource.
