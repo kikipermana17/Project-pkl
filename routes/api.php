@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\ApiBiroController;
+use App\Http\Controllers\API\ApiBiroController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -24,4 +24,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 // Route::get('kategori2', [ApiController::class, 'kategori']);
 // Route::post('kategori2', [ApiController::class, 'tambahKategori']);
 
-Route::resource('biro', API / ApiBiroController::class);
+Route::resource('biro', ApiBiroController::class);
