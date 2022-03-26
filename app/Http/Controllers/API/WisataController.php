@@ -38,9 +38,9 @@ class WisataController extends Controller
     public function index()
     {
         $wisata = DB::table('wisatas')
-            ->join('kategori', 'wisata.kategori_id', '=', 'kategori_id')
-            ->join('biro', 'biro.biro_id', '=', 'biro_id')
-            ->select('kategori.kategori_id', 'wisata.nama_wisata', 'wisata.alamat', 'wisata.deskripsi', 'wisata.tiket', 'wisata.fasilitas', 'biro.biro_id', 'wisata.cover')
+            ->join('kategoris', 'wisata.kategori_id', '=', 'kategori_id')
+            ->join('biros', 'biro.biro_id', '=', 'biro_id')
+            ->select('kategoris.kategori_id', 'wisatas.nama_wisata', 'wisatas.alamat', 'wisatas.deskripsi', 'wisatas.tiket', 'wisatas.fasilitas', 'biros.biro_id', 'wisatas.cover')
             ->get();
         return response()->json([
             'success' => true,
@@ -68,13 +68,13 @@ class WisataController extends Controller
     public function store(Request $request)
     {
         $wisata = new Wisata();
-        $wisata->kategori_id = $request->kategori_id;
+        // $wisata->kategori_id = $request->kategori_id;
         $wisata->nama_wisata = $request->nama_wisata;
         $wisata->alamat = $request->alamat;
         $wisata->deskripsi = $request->deskripsi;
         $wisata->tiket = $request->tiket;
         $wisata->fasilitas = $request->fasilitas;
-        $wisata->biro_id = $request->biro_id;
+        // $wisata->biro_id = $request->biro_id;
         $wisata->cover = $name;
 
         // $image->move(public_path().' images/alat', $name);
@@ -129,13 +129,13 @@ class WisataController extends Controller
     public function update(Request $request, $id)
     {
         $wisata = Wisata::findOrFail($id);
-        $wisata->kategori_id = $request->kategori_id;
+        // $wisata->kategori_id = $request->kategori_id;
         $wisata->nama_wisata = $request->nama_wisata;
         $wisata->alamat = $request->alamat;
         $wisata->deskripsi = $request->deskripsi;
         $wisata->tiket = $request->tiket;
         $wisata->fasilitas = $request->fasilitas;
-        $wisata->biro_id = $request->biro_id;
+        // $wisata->biro_id = $request->biro_id;
         $wisata->cover = $name;
 
         // $image->move(public_path().' images/alat', $name);
