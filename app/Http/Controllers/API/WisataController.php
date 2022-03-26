@@ -3,8 +3,6 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Models\Biro;
-use App\Models\Kategori;
 use Illuminate\Http\Request;
 
 class WisataController extends Controller
@@ -14,25 +12,25 @@ class WisataController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function kategori()
-    {
-        $kategori = Kategori::all();
-        return response()->json([
-            'success' => true,
-            'message' => 'Data kategori',
-            'data' => $kategori,
-        ], 200);
-    }
+    // public function kategori()
+    // {
+    //     $kategori = Kategori::all();
+    //     return response()->json([
+    //         'success' => true,
+    //         'message' => 'Data kategori',
+    //         'data' => $kategori,
+    //     ], 200);
+    // }
 
-    public function biro()
-    {
-        $biro = Biro::all();
-        return response()->json([
-            'success' => true,
-            'message' => 'Data biro',
-            'data' => $biro,
-        ], 200);
-    }
+    // public function biro()
+    // {
+    //     $biro = Biro::all();
+    //     return response()->json([
+    //         'success' => true,
+    //         'message' => 'Data biro',
+    //         'data' => $biro,
+    //     ], 200);
+    // }
 
     public function index()
     {
